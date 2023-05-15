@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Special array method</title>
+  </head>
+  <body>
+    <h1>Special array method</h1>
+
+    <script>
+      // Array.of and Array.from - NOT ON THE PROTOTYPE
+      // create by new array instance
+
+      const personInfo = Array.of("shuaib", "ahmed", 21);
+      console.log(personInfo);
+
+      // Array.from - turn array like structure to array
+
+      const name = "shuaib";
+      console.log(Array.from(name));
+
+      // find - specific item
+      // findIndex - return index of the item
+      // every - every item in the array then return true
+      // some - at lest one item match then return true
+    </script>
+  </body>
+</html>

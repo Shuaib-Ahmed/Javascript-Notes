@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Storage Api</title>
+  </head>
+  <body>
+    <h1>Web Storage Api</h1>
+    <script>
+      // WEB STORAGE API - Provided by browser
+      // Local Storage, Session Storage
+      // setItem, getItem, removeItem, clear, JSON.stringify(), JSON.parse()
+
+      localStorage.setItem("name", "shuaib");
+      localStorage.setItem("age", "20");
+
+      console.log(localStorage.getItem("name"));
+
+      localStorage.removeItem("age");
+
+      // localStorage.clear();
+
+      const names = ["saif", "shuaib", "ahmed"];
+      localStorage.setItem("name", JSON.stringify(names));
+      console.log(JSON.parse(localStorage.getItem("name")));
+    </script>
+  </body>
+</html>

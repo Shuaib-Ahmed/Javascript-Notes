@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow Function</title>
+  </head>
+  <body>
+    <h1>Arrow Function</h1>
+
+    <script>
+      // No name, expression assign to variable
+      // No function keyword
+      // 'this' work diffrently
+      // If parameters are their then value are must, if not given then it will not work
+
+      // Single line with no argument
+      const sayHi = () => console.log(`Say hello`);
+      sayHi();
+
+      // Single line return with one argument
+      const double = (num) => num * 2;
+      console.log(double(2));
+
+      // more complex code
+      const multiply = (num1, num2) => {
+        return num1 * num2;
+      };
+      console.log(multiply(2, 3));
+
+      // arrow function as callback
+      const arr = [1, 2, -1, 0, 7, -9];
+      const filter = arr.filter((num) => num > 1);
+      console.log(filter);
+    </script>
+  </body>
+</html>

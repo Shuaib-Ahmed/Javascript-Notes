@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Access values from dom</title>
+  </head>
+  <body>
+    <h1 id="title">This is my title</h1>
+    <a href="./03_navigate_dom.html" class="linkclass">link</a>
+    <li></li>
+
+    <script>
+      // textContent - give text inside the tag name
+      const title = document.querySelector("#title");
+      console.log(title.textContent);
+
+      // getAttribute
+      // setAttribute
+      const link = document.querySelector(".linkclass");
+      const linkClass = link.getAttribute("class");
+      console.log(linkClass);
+      const list = link.nextElementSibling;
+      // This will over-ride the attribute
+      list.setAttribute("id", "listid");
+      list.textContent = "This is inserted dynamically";
+
+      // className
+      // classList
+      // This will over-ride the className
+      list.className = "className";
+      // This will not over-ride the className
+      list.classList.add("classList", "removeClass");
+      list.classList.remove("removeClass");
+      const result = list.classList.contains("classList");
+
+      if (result) {
+        console.log("class exist");
+      }
+    </script>
+  </body>
+</html>

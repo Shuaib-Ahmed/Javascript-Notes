@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local And Global Scope</title>
+</head>
+<body>
+    <h1>Scopes in js</h1>
+
+    <script>
+        // This have GLOBAL scope
+        let name = "shuaib";
+
+        // Cannot have same name variable in same scope
+        // const name = "siaf"
+
+        if(true){
+            // Cannot access this from outside this scope
+            const age = 50
+            const name = "saif"
+            console.log("name variable is avaliable in this block");
+            if(true){
+                // result saif because it will look up for name variable
+                console.log(name);
+                const name = "ahmed"
+                // result ahmed because it has name variable in the same scope
+                console.log(name);
+            }
+        }
+
+        // Result undefine
+        console.log(age);
+    </script>
+</body>
+</html>

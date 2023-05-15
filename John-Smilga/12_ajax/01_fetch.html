@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON</title>
+  </head>
+  <body>
+    <h1>Fetch</h1>
+    <button id="btn">Button</button>
+
+    <script>
+      // Fetch is build in
+      // Promise based - Return a promise
+      // Same as XHR object, but with clearer implementation
+
+      // By default fetch do GET request on its own
+      // Error caught in catch block are network error only
+
+      fetch("https://reqres.in/api/users?page=2")
+        .then((res) => {
+          return res.json();
+        })
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+
+      const btn = document.getElementById("btn");
+
+      // Fetch with async/await
+      btn.addEventListener("click", async () => {
+        const res = await fetch("https://reqres.in/api/users?page=2");
+        const data = await res.json();
+
+        console.log(data);
+      });
+
+      // Always use fetch and async/await with try/catch block
+    </script>
+  </body>
+</html>

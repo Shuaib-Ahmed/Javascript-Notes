@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototype</title>
+  </head>
+  <body>
+    <h1>Prototype</h1>
+
+    <script>
+      /* Javascript use prototype inheritance model
+        That means that every function/class has a prototype object that is shared with every instance of the function/class
+      */
+
+      function Account(name, balance) {
+        this.name = name;
+        this.balance = balance;
+      }
+
+      Account.prototype.bankName = "ICIC";
+      Account.prototype.addAmount = function (amount) {
+        this.balance += amount;
+        console.log(`Hello ${this.name} your balance is ${this.balance}`);
+      };
+
+      const perosn1 = new Account("shuaib", 100);
+      const perosn2 = new Account("saif", 0);
+
+      perosn1.addAmount(1000);
+      perosn2.addAmount(200);
+    </script>
+  </body>
+</html>

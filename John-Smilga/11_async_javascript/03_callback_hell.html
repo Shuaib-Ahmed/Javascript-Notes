@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callback Hell</title>
+  </head>
+  <body>
+    <h1>Callback Hell</h1>
+
+    <script>
+      // Types of methode to use asynchronous javascript
+      // Callbacks
+      // promises
+      // async await
+
+      // Things to do
+      // Brush teeth
+      // Cook breakfast then eat it
+      // watch youtube while cooking breakfast
+      // talk to mom while eating breakfast
+
+      console.log(`Brush teeth`);
+
+      console.log(`Cooking breakfast`);
+      cookBreakFast(10000);
+
+      function cookBreakFast(second) {
+        console.log(`Watching youtube`);
+
+        // This is callback hell - callback within callback
+        setTimeout(() => {
+          console.log(`Breakfast is cooked`);
+
+          console.log(`Talking to mom while eating breakfast`);
+          setTimeout(() => {
+            console.log(`Talking to mom is done`);
+
+            setTimeout(() => {
+              console.log(`Breakfast is done`);
+            }, 3000);
+          }, 2000);
+        }, second);
+      }
+    </script>
+  </body>
+</html>

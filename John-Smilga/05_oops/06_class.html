@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class</title>
+  </head>
+  <body>
+    <h1>Class</h1>
+
+    <script>
+      // class has a simple syntex as compair to constructor function and prototype
+      class Account {
+        constructor(name, balance) {
+          this.name = name;
+          this.balance = balance;
+        }
+
+        bank = "ICIC";
+
+        // This will go in prototype since it is an method
+        addAmount(amount) {
+          this.balance += amount;
+          console.log(`Hello ${this.name} your balance is ${this.balance} `);
+        }
+      }
+
+      const person1 = new Account("shuaib", 0);
+      console.log(person1);
+      person1.addAmount(4000);
+    </script>
+  </body>
+</html>

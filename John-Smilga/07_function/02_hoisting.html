@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hoisting</title>
+  </head>
+  <body>
+    <h1>Hoisting</h1>
+
+    <script>
+      // In javascript functions and var are hoisted above
+      // That means we can use them before declaration
+      console.log(name);
+      sayHello();
+
+      // not possible
+      console.log(age);
+
+      var name = "shuaib";
+      let age = 21;
+
+      function sayHello() {
+        console.log(`Say Hello`);
+      }
+    </script>
+  </body>
+</html>

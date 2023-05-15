@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spread Operator</title>
+  </head>
+  <body>
+    <h1>Spread Operator</h1>
+
+    <script>
+      // spread operator ...
+      // Allow an iterable to spread inside the receiver
+      // split into single item and copy them
+
+      // string
+      const name = "shuaib ahmed";
+      const letter = [...name];
+      console.log(letter);
+
+      // array
+      const boy = ["shuaib", "saif"];
+      const girl = ["alia", "ayesha"];
+
+      const human = [...boy, ...girl];
+      console.log(human);
+
+      // objects
+      const person = { name: "shuaib", age: 21 };
+      const newPerson = { ...person };
+      console.log(newPerson);
+
+      // function
+      const number = [1, 5, 7, 8];
+      console.log(Math.max(...number));
+
+      const arguments = ["shuaib", 21];
+
+      function sayHi(name, age) {
+        console.log(`Hello ${name} your age is ${age}`);
+      }
+
+      sayHi(...arguments);
+    </script>
+  </body>
+</html>

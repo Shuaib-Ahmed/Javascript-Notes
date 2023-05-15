@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow Function This</title>
+  </head>
+  <body>
+    <h1>Arrow Function This</h1>
+
+    <script>
+      // reg function = this keyword point to the left of the dot
+      // arrow function = this keyword point to the current surrounding scope
+
+      const person1 = {
+        name: "shuaib ahmed",
+        sayHai: function () {
+          console.log(this);
+          console.log(`Hello ${this.name} how are u ???`);
+        },
+      };
+
+      const person2 = {
+        name: "saif ahmed",
+        sayHai: () => {
+          console.log(this);
+          console.log(`Hello ${this.name} how are u ???`);
+        },
+      };
+
+      const person3 = {
+        name: "numan aktar",
+        sayHai: function () {
+          // after 2seconds this keyword value will be default window object
+          setTimeout(function () {
+            console.log(this);
+            console.log(`Hello ${this.name} how are u ???`);
+          }, 2000);
+
+          // To avoid above problem we can use two methods
+
+          // 1. use self variable
+          const self = this;
+          setTimeout(function () {
+            console.log(self);
+            console.log(`Hello ${self.name} how are u ???`);
+          }, 2000);
+
+          // 1. use arrow function
+          setTimeout(() => {
+            console.log(this);
+            console.log(`Hello ${this.name} how are u ???`);
+          }, 2000);
+        },
+      };
+
+      person1.sayHai();
+      person2.sayHai();
+      person3.sayHai();
+    </script>
+  </body>
+</html>

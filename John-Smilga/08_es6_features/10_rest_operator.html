@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rest Operator</title>
+  </head>
+  <body>
+    <h1>Rest Operator</h1>
+
+    <script>
+      // Rest operator ...
+      // gather/collect the item
+
+      const names = ["shuaib", "saif", "adnan", "numan"];
+      // remember order matter make sure rest operator is in the end
+      const [name1, ...restNames] = names;
+      console.log(name1, restNames);
+
+      // object
+      const person = { name: "shuaib", age: 21 };
+      const { name, ...rest } = person;
+      console.log(name, rest);
+
+      // function
+      const scores = [90, 50, 70, 30];
+      function calculate(...scores) {
+        let total = 0;
+        for (let score of scores) {
+          total += score;
+        }
+        return total;
+      }
+
+      // spread operator
+      console.log(calculate(...scores));
+    </script>
+  </body>
+</html>

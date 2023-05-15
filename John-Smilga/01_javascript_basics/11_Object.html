@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object</title>
+  </head>
+  <body>
+    <h1>Object Introduction</h1>
+
+    <script>
+      // Object has key/value pair
+      // dot notation
+
+      const person = {
+        name: "shuaib ahmed",
+        age: 40,
+        siblings: ["saif", "ayesha"],
+        sayHello: function (name) {
+          console.log(name + " is saying hello");
+          return "This is function return value";
+        }, 
+      };
+
+      // Add more key value pair
+      person.color = "black";
+
+      console.log(person.siblings[1]);
+      console.log(person.sayHello("mom"));
+      console.log(person.color);
+    </script>
+  </body>
+</html>

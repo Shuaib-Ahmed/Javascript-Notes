@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object</title>
+  </head>
+  <body>
+    <h1>Object In Js</h1>
+
+    <script>
+      // key value pair
+      // dot notation to access the values
+
+      const person = {
+        name: "shuaib ahmed",
+        age: 50,
+        jobs: ["casher", "teacher", "student"],
+        greeting: function () {
+          console.log(`Greeting by shuaib`);
+        },
+      };
+
+      console.log(person);
+
+      person.greeting();
+
+      console.log(person.age);
+      person.age = `i am 21 years old`;
+      console.log(person.age);
+
+      // delete a key value pair
+      delete person.jobs;
+
+      console.log(person);
+
+      // add new key value pair
+      person.city = "kolkata";
+
+      // Nested object
+      const movie = {
+        name: "avengers",
+        theater1: { name: "theater1 name", collection: 3000 },
+        theater2: { name: "theater2 name", collection: 8000 },
+      };
+
+      console.log(movie.theater1.collection);
+
+      // bracket notation
+      // return same thing as above
+      console.log(movie["theater1"]["collection"]);
+
+      // we can also place variable inside the bracket
+    </script>
+  </body>
+</html>

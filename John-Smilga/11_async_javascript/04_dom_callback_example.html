@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom Callback Example</title>
+  </head>
+  <body>
+    <h1>Dom Callback Example</h1>
+
+    <h1 id="one">Heading 1</h1>
+    <h1 id="two">Heading 2</h1>
+    <h1 id="three">Heading 3</h1>
+
+    <button id="btn">click</button>
+
+    <script>
+      const heading1 = document.querySelector("#one");
+      const heading2 = document.querySelector("#two");
+      const heading3 = document.querySelector("#three");
+
+      const btn = document.querySelector("#btn");
+
+      btn.addEventListener("click", () => {
+        // callback hell
+        setTimeout(() => {
+          heading1.style.color = "red";
+          setTimeout(() => {
+            heading2.style.color = "blue";
+            setTimeout(() => {
+              heading3.style.color = "brown";
+            }, 1000);
+          }, 2000);
+        }, 3000);
+      });
+    </script>
+  </body>
+</html>

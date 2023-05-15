@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+
+    <style>
+      .primaryButton {
+        border: none;
+        padding: 5px 10px;
+        font-size: 20px;
+        background-color: aqua;
+      }
+      .link {
+        display: block;
+        margin-top: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">Button</button>
+    <h1 class="heading">mouse events check</h1>
+    <input type="text" class="name" />
+    <div class="linkContainer" style="padding: 10px; border: 1px solid black">
+      <a href="#" class="link">top</a>
+    </div>
+
+    <script>
+      // select the element first
+      // addEventListener
+      // what to do when event
+      const button = document.querySelector(".btn");
+      const heading = document.querySelector(".heading");
+      const input = document.querySelector(".name");
+      const linkContainer = document.querySelector(".linkContainer");
+
+      // click event
+      button.addEventListener("click", function () {
+        if (button.classList.contains("primaryButton")) {
+          button.classList.remove("primaryButton");
+        } else {
+          button.classList.add("primaryButton");
+        }
+      });
+
+      // mouse events
+      // mousedown - fire when mouse is click
+      // mouseup - fire when mouse leave after clicking
+      // mouseenter - when mouse enter an element
+      // mouseleave - when mouse leave an element
+      heading.addEventListener("mousedown", () => console.log("mouse down"));
+      heading.addEventListener("mouseup", () => console.log("mouse up"));
+      heading.addEventListener("mouseenter", () => console.log("mouse enter"));
+      heading.addEventListener("mouseleave", () => console.log("mouse leave"));
+
+      // key input
+      // keypress - when key is pressed
+      // keydown - when key is down
+      // keyup - when key is released
+      input.addEventListener("keypress", () => console.log("key press"));
+      input.addEventListener("keydown", () => console.log("key down"));
+      input.addEventListener("keyup", () => {
+        console.log("key up");
+        // input value
+        console.log(input.value);
+      });
+
+      // event object
+      // event.type - return type of event
+      // event.currentTarget - return the element on which event was added
+      // this keyword - return same as currentTarget on if normal fuction is used not the arrow function
+      // preventDefault - prevent default behaviour
+      linkContainer.addEventListener("click", function (event) {
+        event.preventDefault();
+        console.log(event.type);
+        console.log(event.target);
+        console.log(event.currentTarget);
+        console.log(this);
+      });
+
+      // currentTarget vs target
+      // currentTarget - always refer to the element to which the event handler has been attach to
+      // targert - identifies the element on which the event occur
+    </script>
+  </body>
+</html>

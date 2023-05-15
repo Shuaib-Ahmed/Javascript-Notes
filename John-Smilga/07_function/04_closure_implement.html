@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clouser Implement</title>
+  </head>
+  <body>
+    <h1>Clouser Implement</h1>
+
+    <script>
+      function account(name, initialBalance) {
+        // This is a clouser
+        function showBalance() {
+          console.log(`Hello ${name} your balance is ${initialBalance}`);
+        }
+        return showBalance;
+      }
+
+      account("shuaib", 200)();
+
+      const saif = account("saif", 300);
+      saif();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Templet Literal</title>
+  </head>
+  <body>
+    <h1>Templet Literal</h1>
+    <div id="content"></div>
+
+    <script>
+      const name = "shuaib ahmed";
+      const string = `${name} hello their`;
+
+      const div = document.getElementById("content");
+
+      // Insert html will the help of ``
+      div.innerHTML = `<h1>This is a header</h1>`;
+
+      // Tagged templet literal
+      const personName = "shuaib ahmed";
+      const age = 21;
+
+      const quote = highlight`Hello my name is ${personName} my age is ${age}`;
+
+      function highlight(quote, ...varaible) {
+        const text = quote.map(function (str, index) {
+          return `${str || ""} <strong>${varaible[index] || ""}</strong>`;
+        });
+
+        return text.join("");
+      }
+
+      div.innerHTML = `<p>${quote}</p>`;
+    </script>
+  </body>
+</html>

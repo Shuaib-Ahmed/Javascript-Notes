@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manipulate Element Dynamically</title>
+
+    <style>
+      .blue {
+        color: blue;
+      }
+      .red {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // createElement - for element
+      // createTextNode - for text content
+      // appendChild - append child for a parent
+
+      const heading = document.createElement("h1");
+      const headingText = document.createTextNode("This is h1");
+      heading.appendChild(headingText);
+      document.body.appendChild(heading);
+
+      heading.classList.add("blue");
+
+      // insertBefore - (element, location)
+      const paragraph = document.createElement("p");
+      const paragraphText = document.createTextNode("This is a p");
+      paragraph.appendChild(paragraphText);
+      paragraph.classList.add("red");
+      paragraph.style.fontSize = "50px";
+
+      document.body.insertBefore(paragraph, heading);
+
+      // replaceChild - (new, old)
+      const link = document.createElement("a");
+      const linkText = document.createTextNode("This is a link");
+      link.appendChild(linkText);
+      link.setAttribute("href", "./03_navigate_dom.html");
+      document.body.appendChild(link);
+
+      document.body.replaceChild(link, paragraph);
+
+      // prepend - append from the start of the parent element
+      // innerText - dosenot require createTextNode
+      const list = document.createElement("li");
+      list.innerText = "i am a list";
+      document.body.prepend(list);
+
+      // remove - element.remove()
+      // removeChild - (parent.removeChild(child))
+
+      // innerHTML - give html structure of the children
+      // textContent - give content of the children html structure
+      console.log(heading.textContent);
+      console.log(document.body.innerHTML);
+      const div = document.createElement("div");
+      div.innerHTML = `<h2>hello there</h2>`;
+      document.body.appendChild(div);
+    </script>
+  </body>
+</html>

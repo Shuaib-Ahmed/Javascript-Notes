@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Call and apply Method</title>
+  </head>
+  <body>
+    <h1>Call apply and bind Method</h1>
+
+    <script>
+      // call, apply methode - run instantly
+      // bind method - assign and run afterwords
+
+      const person1 = {
+        name: "shuaib ahmed",
+      };
+
+      const person2 = {
+        name: "saif ahmed",
+      };
+
+      function greeting(item1, item2) {
+        console.log(item1, item2);
+        console.log(`Hello ${this.name}`);
+      }
+
+      // first argument - value of this
+      // rest argument - list of items
+      greeting.call(person1, "item1", "item2");
+
+      // first argument - value of this
+      // rest argument - array of items
+      greeting.apply(person2, ["iitem1", "item2"]);
+
+      // first argument - value of this
+      // rest argument - list of items
+      const shuaibGreets = greeting.bind(person1, "1", "2");
+      shuaibGreets();
+    </script>
+  </body>
+</html>

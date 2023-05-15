@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IIFE</title>
+  </head>
+  <body>
+    <h1>IIFE</h1>
+
+    <script>
+      // IIFE - Immediately Invoked Function Expression
+      // old approch, new approch is modules
+      // Simple approch to avoid globle scope pollution
+
+      // global scope access from every where
+      const num1 = 10;
+
+      function showNumber() {
+        console.log(`value of num1 in regular function is ${num1}`);
+      }
+      showNumber();
+
+      // IIFE - immediately invoked 
+      (function (value) {
+        const num1 = value;
+        console.log(`value of num1 in iife is ${num1}`);
+      })(20);
+    </script>
+  </body>
+</html>

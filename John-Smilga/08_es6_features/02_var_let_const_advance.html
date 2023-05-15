@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Var Let Const</title>
+  </head>
+  <body>
+    <h1>Var Let Const</h1>
+
+    <script>
+      // var - function scope
+      // let and const - block scope
+
+      var name = "shuaib";
+      let age = 21;
+
+      if (true) {
+        // This will change the outer scope variable also
+        var name = "saif";
+        // This will have a block level scope
+        let age = 15;
+        console.log(name, age);
+      }
+
+      console.log(name, age);
+    </script>
+  </body>
+</html>

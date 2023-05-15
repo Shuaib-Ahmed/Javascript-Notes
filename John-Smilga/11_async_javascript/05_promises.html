@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises</title>
+  </head>
+  <body>
+    <h1>Promises</h1>
+
+    <script>
+      // Promise - three state - pending, resolve, reject
+      // then and catch function attach to every promise
+
+      const promise = new Promise((resolve, reject) => {
+        // Done some asynchronous work
+        const value = false;
+
+        if (value) {
+          // if value is true then return anything u want
+          resolve(`Task is successfuly done`);
+        } else {
+          reject(`Task is not successfuly done`);
+        }
+      });
+
+      promise
+        .then((value) => {
+          console.log(value);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    </script>
+  </body>
+</html>

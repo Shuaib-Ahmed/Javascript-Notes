@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays Methods</title>
+  </head>
+  <body>
+    <h1>List Of Arrays Methods</h1>
+
+    <script>
+      let names = ["shuaib", "saif", "adib"];
+
+      // length of an array
+      names.length;
+
+      let moreNames = ["adnan", "siraj", "shadab"];
+
+      // concat two arrays
+      names = names.concat(moreNames);
+
+      // add and remove elements from the start
+      names.unshift("papa");
+      names.shift();
+
+      // add and remove element from the end
+      names.push("papa");
+      names.pop();
+
+      // return an array from 0th index to 5th index
+      names.slice(0, 6);
+
+      // remove three elements from 2nd index
+      // it mutate the original array
+      names.splice(2, 3);
+    </script>
+  </body>
+</html>

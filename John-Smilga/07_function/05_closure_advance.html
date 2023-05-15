@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure Advance</title>
+  </head>
+  <body>
+    <h1>Closure Advance</h1>
+
+    <script>
+      function account(name, initialBalance) {
+        let balance = initialBalance;
+        function showBalance() {
+          console.log(`Hello ${name} your balance is ${balance}`);
+        }
+        function deposite(amount) {
+          balance += amount;
+          showBalance();
+        }
+        function withdraw(amount) {
+          if (amount > balance) {
+            console.log(`not enough money`);
+            return;
+          }
+          balance -= amount;
+          showBalance();
+        }
+
+        // This is also a clouser
+        return {
+          showBalance: showBalance,
+          deposite: deposite,
+          withdraw: withdraw,
+        };
+      }
+
+      const person1 = account("shuaib", 100);
+      const person2 = account("saif", 200);
+
+      person1.showBalance();
+      person1.deposite(300);
+      person1.withdraw(500);
+      person1.withdraw(150);
+
+      person2.showBalance();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Dynamic Element</title>
+  </head>
+  <body>
+    <div class="container" style="padding: 20px 10px">
+      <ul class="list-items">
+        <li class="item"><a href="#" class="link">list</a></li>
+        <li class="item"><a href="#" class="link">list</a></li>
+        <li class="item"><a href="#" class="link">list</a></li>
+        <li class="item"><a href="#" class="link">list</a></li>
+      </ul>
+    </div>
+
+    <script>
+      // use to select dynamic element
+      // event propagation - order the event are fired
+      // event bubbling - clicked element first the bubble up -- default
+      // event capturing - fires at the root and fires untill reached target
+
+      const container = document.querySelector(".container");
+      const list = document.querySelector(".list-items");
+
+      const showBubbling = (event) => {
+        console.log("currentTarget", event.currentTarget);
+        console.log("target", event.target);
+      };
+
+      // if we click on link it register that event event though we had not add any eventlistener directly to it but rather than to the parent elemnet
+      container.addEventListener("click", showBubbling);
+
+      // capturing
+      list.addEventListener("click", showBubbling, { capture: true });
+    </script>
+  </body>
+</html>

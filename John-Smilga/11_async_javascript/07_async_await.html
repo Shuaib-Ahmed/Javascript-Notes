@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async Await</title>
+  </head>
+  <body>
+    <h1>Async Await</h1>
+
+    <h1 id="one">Heading 1</h1>
+    <h1 id="two">Heading 2</h1>
+    <h1 id="three">Heading 3</h1>
+
+    <button id="btn">click</button>
+
+    <script>
+      // Fuction must me async for using await
+      // Await wait till promise is resolved
+      // error handling - try/catch
+
+      const heading1 = document.querySelector("#one");
+      const heading2 = document.querySelector("#two");
+      const heading3 = document.querySelector("#three");
+
+      const btn = document.querySelector("#btn");
+
+      btn.addEventListener("click", async () => {
+        await changeColor(2000, heading1, "red");
+        await changeColor(1000, heading2, "green");
+        await changeColor(1000, heading3, "yellow");
+
+        console.log(`This will run after all promise will resolve`);
+      });
+
+      const changeColor = (time, element, color) => {
+        const promise = new Promise((resolve, reject) => {
+          if (element) {
+            setTimeout(() => {
+              element.style.color = color;
+              resolve();
+            }, time);
+          } else {
+            reject(new Error(`There is no such element`));
+          }
+        });
+
+        return promise;
+      };
+    </script>
+  </body>
+</html>

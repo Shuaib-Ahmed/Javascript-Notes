@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Elements Command</title>
+  </head>
+  <body>
+    <h1>Select Elements Of Html</h1>
+
+    <h1 id="title">This contains id</h1>
+
+    <h2>This use select by tag name</h2>
+    <h2>This use select by tag name</h2>
+
+    <h3 class="subTitle">This contain classname</h3>
+    <h3 class="subTitle">This contain classname</h3>
+    <h3 class="subTitle">This contain classname</h3>
+    <h3 class="subTitle">This contain classname</h3>
+
+    <div id="container">
+      <div id="headingContainer">
+        <h1 id="heading">This is a heading</h1>
+      </div>
+      <h2 class="list">This is a list</h2>
+      <h2 class="list">This is a list</h2>
+      <h2 class="list">This is a list</h2>
+    </div>
+
+    <script>
+      // By Id
+      const title = document.getElementById("title");
+      title.style.color = "red";
+
+      // By tag name
+      // return an html collect which is an array like object
+      // have access to index and length but dose not have any other properties
+      const headings = document.getElementsByTagName("h2");
+      headings[0].style.color = "yellow";
+      headings[1].style.color = "orange";
+
+      const headingsArray = [...headings];
+      console.log(headingsArray, headings);
+
+      // By class name - returns html collection
+      const subHeading = document.getElementsByClassName("subTitle");
+      console.log(subHeading);
+
+      // By query selecter - return the first instance of the mention query
+      document.querySelector(
+        "#container #headingContainer #heading"
+      ).style.color = "red";
+
+      // By query selecter all - return a node list which is same as an array
+      // have acces to index, length and forEach properties
+      const lists = document.querySelectorAll("#container .list");
+      console.log(lists);
+      lists.forEach(function (item) {
+        item.style.color = "green";
+      });
+    </script>
+  </body>
+</html>

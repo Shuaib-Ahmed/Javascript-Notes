@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Events</title>
+
+    <style>
+      .box {
+        margin: 1rem;
+        height: 150px;
+        width: 150px;
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Globals Events In Js</h1>
+
+    <button class="btn">button</button>
+    <div class="box"></div>
+
+    <script>
+      // DOMContentLoaded - Fire when the initial HTML document is completely loaded and parsed, whithout waiting for stylesheet, image and subframe.
+
+      window.addEventListener("DOMContentLoaded", () => {
+        console.log("DOMContentLoaded ran");
+      });
+
+      // load - Fire when all the css and image is loaded as well as HTML documnets
+      window.addEventListener("load", () => {
+        console.log("load ran");
+      });
+
+      // scroll - Fire when we scroll
+      window.addEventListener("scroll", () => {
+        console.log("scroll ran");
+        console.log(window.scrollX + "px");
+        console.log(window.scrollY + "px");
+      });
+
+      // innerWidth, innerHeight
+      console.log(window.innerWidth);
+      console.log(window.innerHeight);
+
+      // getBoundingClientRect - provided all the information about size of the element and also the position relative to the viewport
+
+      const btn = document.querySelector(".btn");
+      const box = document.querySelector(".box");
+
+      btn.addEventListener("click", () => {
+        const values = box.getBoundingClientRect();
+        console.log(values);
+      });
+
+      // resize event - Fire when we resize the window
+      window.addEventListener("resize", () => {
+        console.log(window.innerWidth);
+      });
+    </script>
+  </body>
+</html>

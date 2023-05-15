@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This keyword</title>
+  </head>
+  <body>
+    <h1>This keyword</h1>
+
+    <button id="btn1">Click Me (Reflect the address of the button)</button>
+    <button id="btn2">Click Me (Reflect the default value of this)</button>
+
+    <script>
+      // point to the left of the dot
+
+      const person1 = {
+        name: "shuaib ahmed",
+        printName: function () {
+          console.log(`hello from ${this.name}`);
+        },
+      };
+
+      const person2 = {
+        name: "saif ahmed",
+        printName: function () {
+          console.log(`hello from ${this.name}`);
+
+          console.log(this);
+        },
+      };
+
+      // this keyword inside printName will contain the address of the left part of the dot
+      person1.printName();
+      person2.printName();
+
+      // ADVANCE THIS CONCEPT
+      /* In regular function (not arrow) this keyword will always determined by how a function is invoked (left of .) 
+
+      Default value of this keyword is window object
+
+      In arrow function this keyword works diffrently
+      */
+
+      function showThis() {
+        console.log(this);
+      }
+
+      // Nothing to the left of the function invoke hence default value of this keyword will be shown
+      showThis();
+
+      const obj1 = {
+        showThis: showThis,
+      };
+
+      // left to the function invoke is obj1 so the value of this keyword is obj1
+      obj1.showThis();
+
+      const btn1 = document.getElementById("btn1");
+      const btn2 = document.getElementById("btn2");
+
+      // left to the function invoke is btn1 so the value of this keyword is btn1
+      btn1.addEventListener("click", showThis);
+
+      // left to the function invoke is nothing so the value of this keyword is window object
+      btn2.addEventListener("click", function () {
+        showThis();
+      });
+    </script>
+  </body>
+</html>

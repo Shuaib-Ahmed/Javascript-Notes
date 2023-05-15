@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
+  </head>
+  <body>
+    <h1>Functions Introduction</h1>
+
+    <script>
+      // Function declaration,
+      function sayHello(name) {
+        console.log("Hello There " + name);
+        return true;
+      }
+
+      // Function Invok
+      const result = sayHello("Shuaib");
+      sayHello("saif");
+
+      // Function return result
+      console.log(result);
+
+      // Function expression
+      const add = function addTwoNumber(a, b) {
+        return a + b;
+      };
+      
+      // Function expression anonymous
+      const addAnonymous = function (a, b) {
+        return a + b;
+      };
+
+      console.log(add(10, 15));
+      console.log(addAnonymous(20, 30));
+    </script>
+  </body>
+</html>

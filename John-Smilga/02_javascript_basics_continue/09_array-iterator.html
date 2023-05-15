@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Iterator</title>
+  </head>
+  <body>
+    <h1>Array Iterator</h1>
+
+    <script>
+      // forEach - Dose not return a new array
+      const peoples = [
+        { name: "shuaib", age: 20 },
+        { name: "saif", age: 14 },
+        { name: "mom", age: 40 },
+      ];
+      peoples.forEach(function (people) {
+        console.log(people.name.toUpperCase());
+      });
+
+      // map - return new array,
+      // dose not change size of the oroginal array,
+      // use value of original array value to make new one
+      const ages = peoples.map(function (people) {
+        return people.age;
+      });
+      console.log(ages);
+
+      // filter - return new array
+      // can change size of array based on the filter conditions
+      // return true in callback function if u want to include the value
+      const adults = peoples.filter(function (people) {
+        return people.age >= 18;
+      });
+      console.log(adults);
+
+      // find - return one instance of array
+      // if not present then return undefine
+      const me = peoples.find(function (people) {
+        return people.name === "shuaib";
+      });
+      console.log(me);
+
+      // reduce - reduce your array to a single value - array, object, number
+      // 1. parameter - accumulator total of all values
+      // 2. parameter - current index value of array
+      const totalAge = peoples.reduce(function (total, people) {
+        total += people.age;
+        return total;
+      }, 0);
+      console.log(totalAge);
+    </script>
+  </body>
+</html>

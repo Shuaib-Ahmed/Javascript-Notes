@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traverse Dom Tree</title>
+  </head>
+  <body>
+    <div id="parentContainer">
+      <div class="children">This is a children div</div>
+      <div class="children">This is a children div</div>
+      <div class="children">This is a children div</div>
+      <div class="children">This is a children div</div>
+      <div class="children">This is a children div</div>
+    </div>
+
+    <script>
+      const parentContainer = document.querySelector("#parentContainer");
+
+      // childNodes - return all nodes including white space, which is treated as text node
+      // children - not include white space
+      // firstChild
+      // lastChild
+
+      // return node list
+      console.log(parentContainer.childNodes);
+      // return html collection
+      console.log(parentContainer.children);
+
+      // parentElement
+      const childrenElement = document.querySelector(".children");
+      console.log(childrenElement.parentElement);
+      childrenElement.parentElement.style.backgroundColor = "red";
+      childrenElement.parentElement.style.color = "white";
+
+      // previousElementSibling
+      // nextElementSibling
+      const childrenElements = document.querySelectorAll("#parentContainer .children");
+      console.log(childrenElements[0].nextElementSibling);
+      console.log(childrenElements[0].previousElementSibling);
+    </script>
+  </body>
+</html>
